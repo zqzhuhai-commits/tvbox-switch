@@ -4,7 +4,7 @@
 
 ## 下载
 
-[SwitchTVBox-0.4.19-standalone-test.nsp](./SwitchTVBox-0.4.19-standalone-test.nsp)
+[下载 SwitchTVBox-0.4.19-standalone-test.nsp](https://github.com/zqzhuhai-commits/tvbox-switch/releases/download/v0.4.19-nsp-test/SwitchTVBox-0.4.19-standalone-test.nsp)
 
 文件大小：38,616,280 字节。Title ID：`05d7c55b04190000`。
 
@@ -29,3 +29,9 @@ SHA-256：`4b30466f34066f4f9894a5b91e803e00c549151ecb672b71964021c59fd827f5`。
 - libnx 双格式入口：https://github.com/switchbrew/libnx/blob/master/nx/source/runtime/switch_crt0.s
 
 文件中没有加入用户的密钥文件、登录信息或 SD 卡配置。
+
+## 传输与发布
+
+`payload/*.part` 是测试包的 gzip 分块，由 GitHub Actions 自动合并、校验 SHA-256 并发布到 Releases。下载 NSP 时请使用上面的 Releases 链接，不要安装分块文件。
+
+也可以下载整个仓库后运行 `python3 scripts/assemble.py`，在仓库根目录还原同一份 NSP。

@@ -1,0 +1,11 @@
+{
+  "nsp_sha256": "4b30466f34066f4f9894a5b91e803e00c549151ecb672b71964021c59fd827f5",
+  "size_bytes": 38616280,
+  "title_id": "05d7c55b04190000",
+  "checked_integrity_blocks": 1280,
+  "verified_romfs_files": 177,
+  "nca_count": 3,
+  "program_segments_identical_to_nro": true,
+  "cnmt_content_hashes_verified": true,
+  "hardware_tested": false
+}

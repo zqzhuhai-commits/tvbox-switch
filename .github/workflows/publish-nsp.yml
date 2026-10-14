@@ -1,0 +1,27 @@
+name: Publish NSP test package
+on:
+  push:
+    branches: [main]
+    paths:
+      - "payload/**"
+      - "scripts/assemble.py"
+      - ".github/workflows/publish-nsp.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reconstruct and verify NSP
+        run: python3 scripts/assemble.py
+      - name: Publish prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view v0.4.19-nsp-test >/dev/null 2>&1; then
+            gh release upload v0.4.19-nsp-test SwitchTVBox-0.4.19-standalone-test.nsp --clobber
+          else
+            gh release create v0.4.19-nsp-test SwitchTVBox-0.4.19-standalone-test.nsp --target "$GITHUB_SHA" --prerelease --title "SwitchTVBox 0.4.19 — standalone NSP test" --notes-file RELEASE-NOTES.md
+          fi
