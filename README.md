@@ -1,37 +1,61 @@
-# SwitchTVBox 0.4.19 — 独立 NSP 测试包
+<div align="center">
+  <img src="icon.jpg" alt="SwitchTVBox 图标" width="128" />
+  <h1>SwitchTVBox</h1>
+  <p>在 Nintendo Switch 上浏览片库，支持网盘与免网盘播放。</p>
+  <p><a href="https://github.com/zender555/SwitchTVBox/releases/latest"><strong>下载最新安装包</strong></a> · <a href="#安装">安装方法</a></p>
+</div>
 
-使用用户提供的官方 v0.4.19 NRO 重新封装为独立 NSP，保留名称、图标与内置资源。不是原作者的官方 NSP 发布。
+## 功能
 
-## 下载
+- 海报片库与分类浏览，支持搜索、筛选和翻页。
+- 百度、夸克网盘扫码登录，浏览自己的网盘及分享内容。
+- 独立「免网盘」入口，支持分类、封面与选集播放，无需网盘登录。
+- 视频播放、选集与切集，播放失败时支持自动切换备用线路。
+- 中文界面，支持手柄操作。
 
-[下载 SwitchTVBox-0.4.19-standalone-test.nsp](https://github.com/zqzhuhai-commits/tvbox-switch/releases/download/v0.4.19-nsp-test/SwitchTVBox-0.4.19-standalone-test.nsp)
+## 安装
 
-文件大小：38,616,280 字节。Title ID：`05d7c55b04190000`。
+1. 从 [Releases](https://github.com/zender555/SwitchTVBox/releases/latest) 下载 NRO。
+2. 将 NRO 放入 SD 卡 `switch/SwitchTVBox/` 目录，并命名为 `SwitchTVBox.nro`。
+3. 通过支持完整内存模式的 Homebrew 启动方式打开 SwitchTVBox。
+4. 使用网盘功能时扫码登录；「免网盘」入口无需网盘登录。
 
-SHA-256：`4b30466f34066f4f9894a5b91e803e00c549151ecb672b71964021c59fd827f5`。
+Release 仅提供 NRO 文件，不包含账号文件、模板或默认配置。更新时替换 NRO，保留本机已有的账号与配置。上游仅发布 NRO。本仓库保留原有 0.4.19 独立 NSP 测试包，见下方说明。
 
-## 打包方法和验证
+## 操作
 
-将 NRO 的三个程序段保留原始字节，封装为 NSO；将原 NRO 的 177 个 RomFS 文件、图标和 NACP 元数据放入独立安装包。设计为直接从 HOME 菜单启动，不依赖外部 NRO。
+| 按键 | 功能 |
+| --- | --- |
+| A / B | 选择 / 返回 |
+| X | 搜索 |
+| 播放中按右摇杆 | 打开选集 |
 
-已验证 NSP/PFS0 结构、三个 NCA 文件哈希、NCA 文件系统头、1,280 个完整性块、CNMT 内容记录、NSO 程序段和全部 177 个资源文件。
+## 0.4.28 更新
 
-**未经过 Switch 真机安装、启动或播放测试，不能保证兼容你的系统。** 原程序的 NRO 更新/重启功能可能不适用于此独立包；后续更新应重新打包验证。
+新增免网盘播放线路，支持播放失败后自动切换备用线路；优化拖动进度后的网速提示与侧边栏排版。
 
-本仓库不包含客户端源码。运行功能由原始二进制提供，本次只处理封装；原程序的授权与权利归原权利人所有。
+## 账号与隐私
 
-## 来源
+发布包不包含账号文件、账号模板或默认配置。扫码登录后，软件会在你的 SD 卡上生成用于保存登录凭据的本机账号文件；请勿上传或分享该文件。
 
-- 原项目：https://github.com/zender555/SwitchTVBox
-- 原版本：https://github.com/zender555/SwitchTVBox/releases/tag/v0.4.19
-- 原 NRO SHA-256：`5e96c98397f2cad274dae5809bca0127d2d48a598066a38cff85b4c5eb4a030f`
-- NSO 结构参考：https://github.com/switchbrew/switch-tools/blob/master/src/elf2nso.c
-- libnx 双格式入口：https://github.com/switchbrew/libnx/blob/master/nx/source/runtime/switch_crt0.s
+本仓库同步上游公开的安装说明及图标。上游仓库未公开客户端或前端源码。
 
-文件中没有加入用户的密钥文件、登录信息或 SD 卡配置。
+## 内容来源与免责声明
 
-## 传输与发布
+本软件提供片库浏览、网盘连接和视频播放功能。影片简介、海报及相关链接由互联网公开页面、第三方服务或用户自行提供；其权利归原权利人所有。本发布包不包含影视作品文件，内容来源于互联网不代表已获得转载或传播授权。
 
-`payload/*.part` 是测试包的 gzip 分块，由 GitHub Actions 自动合并、校验 SHA-256 并发布到 Releases。下载 NSP 时请使用上面的 Releases 链接，不要安装分块文件。
+请仅访问、保存和播放你拥有权利或已获得合法授权的内容，并遵守适用法律及第三方服务条款。第三方内容与服务可能变更、中断或失效，本软件不保证其持续可用性。
 
-也可以下载整个仓库后运行 `python3 scripts/assemble.py`，在仓库根目录还原同一份 NSP。
+如权利人认为本项目涉及侵权，请通过 [GitHub Issues](https://github.com/zender555/SwitchTVBox/issues/new) 提交具体内容或链接、权利证明及联系渠道；请勿在公开 Issue 中上传身份证件、密码或其他敏感信息。收到有效通知后，我们将及时采取移除相关内容、断开相关入口、停止分发或下架受影响版本等适当措施。
+
+本声明不排除法律规定不得免除或限制的责任。
+
+## 本仓库文件
+
+- [原有 0.4.19 独立 NSP 测试包说明](docs/standalone-nsp-0.4.19.md)。原有打包脚本、分块文件及发布工作流保留。
+
+## 上游来源
+
+同步自 [zender555/SwitchTVBox](https://github.com/zender555/SwitchTVBox)，上游提交 `73f45d8`。保留原项目署名与功能说明，移除群宣传段落及图片。本仓库不是原作者的官方发布仓库。
+
+上游当前仅包含 `README.md`、`icon.jpg` 与群宣传图片，没有 HTML、CSS、JavaScript 或客户端源码。因此本次未包含前端源码；本次附件 NSP 是二进制安装包，未上传至本仓库。
