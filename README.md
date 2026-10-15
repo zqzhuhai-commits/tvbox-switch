@@ -2,7 +2,7 @@
   <img src="icon.jpg" alt="SwitchTVBox 图标" width="128" />
   <h1>SwitchTVBox</h1>
   <p>在 Nintendo Switch 上浏览片库，支持网盘与免网盘播放。</p>
-  <p><a href="https://github.com/zender555/SwitchTVBox/releases/latest"><strong>下载最新安装包</strong></a> · <a href="#安装">安装方法</a></p>
+  <p><a href="https://github.com/zqzhuhai-commits/tvbox-switch/releases/latest"><strong>下载最新安装包</strong></a> · <a href="#安装">安装方法</a></p>
 </div>
 
 ## 功能
@@ -15,7 +15,7 @@
 
 ## 安装
 
-1. 从 [Releases](https://github.com/zender555/SwitchTVBox/releases/latest) 下载 NRO。
+1. 从 [Releases](https://github.com/zqzhuhai-commits/tvbox-switch/releases/latest) 下载 NRO。
 2. 将 NRO 放入 SD 卡 `switch/SwitchTVBox/` 目录，并命名为 `SwitchTVBox.nro`。
 3. 通过支持完整内存模式的 Homebrew 启动方式打开 SwitchTVBox。
 4. 使用网盘功能时扫码登录；「免网盘」入口无需网盘登录。
@@ -46,26 +46,6 @@ Release 仅提供 NRO 文件，不包含账号文件、模板或默认配置。�
 
 请仅访问、保存和播放你拥有权利或已获得合法授权的内容，并遵守适用法律及第三方服务条款。第三方内容与服务可能变更、中断或失效，本软件不保证其持续可用性。
 
-如权利人认为本项目涉及侵权，请通过 [GitHub Issues](https://github.com/zender555/SwitchTVBox/issues/new) 提交具体内容或链接、权利证明及联系渠道；请勿在公开 Issue 中上传身份证件、密码或其他敏感信息。收到有效通知后，我们将及时采取移除相关内容、断开相关入口、停止分发或下架受影响版本等适当措施。
+如权利人认为本项目涉及侵权，请通过 [GitHub Issues](https://github.com/zqzhuhai-commits/tvbox-switch/issues/new) 提交具体内容或链接、权利证明及联系渠道；请勿在公开 Issue 中上传身份证件、密码或其他敏感信息。收到有效通知后，我们将及时采取移除相关内容、断开相关入口、停止分发或下架受影响版本等适当措施。
 
 本声明不排除法律规定不得免除或限制的责任。
-
-## 本仓库文件
-
-- [原有 0.4.19 独立 NSP 测试包说明](docs/standalone-nsp-0.4.19.md)。原有打包脚本、分块文件及发布工作流保留。
-
-## 上游来源
-
-同步自 [zender555/SwitchTVBox](https://github.com/zender555/SwitchTVBox)，上游提交 `73f45d8`。保留原项目署名与功能说明，移除群宣传段落及图片。本仓库不是原作者的官方发布仓库。
-
-上游当前仅包含 `README.md`、`icon.jpg` 与群宣传图片，没有 HTML、CSS、JavaScript 或客户端源码。因此本次未包含前端源码；用户自行制作的 NSP 二进制安装包已另行上传，见下方下载链接。
-
-## 用户自制 NSP 下载
-
-[Releases 下载页](https://github.com/zqzhuhai-commits/tvbox-switch/releases/tag/user-nsp-v0-05243035FF755000) · [直接下载 NSP](https://github.com/zqzhuhai-commits/tvbox-switch/releases/download/user-nsp-v0-05243035FF755000/SwitchTVBox-05243035FF755000-v0.nsp)
-
-此 NSP 由仓库所有者自行制作并授权公开上传，文件按原样保存。它不是上游作者的官方 NSP 发布，未经过本次真机安装或启动测试。
-
-- 文件大小：264,408 字节
-- Title ID（来自文件名）：`05243035FF755000`
-- SHA-256：`ab62328d107f1b2fd1d9a05370199fb4199721946de2429aef12ca7a911310ef`
