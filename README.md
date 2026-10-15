@@ -49,3 +49,13 @@ Release 仅提供 NRO 文件，不包含账号文件、模板或默认配置。�
 如权利人认为本项目涉及侵权，请通过 [GitHub Issues](https://github.com/zqzhuhai-commits/tvbox-switch/issues/new) 提交具体内容或链接、权利证明及联系渠道；请勿在公开 Issue 中上传身份证件、密码或其他敏感信息。收到有效通知后，我们将及时采取移除相关内容、断开相关入口、停止分发或下架受影响版本等适当措施。
 
 本声明不排除法律规定不得免除或限制的责任。
+
+## 项目参考与正式版附件
+
+本项目参考 [zender555/SwitchTVBox](https://github.com/zender555/SwitchTVBox)，感谢原作者的工作。
+
+[SwitchTVBox 正式版发布页](https://github.com/zqzhuhai-commits/tvbox-switch/releases/tag/SwitchTVBox)
+
+- [下载 SwitchTvbox.zip](https://github.com/zqzhuhai-commits/tvbox-switch/releases/download/SwitchTVBox/SwitchTvbox.zip)
+- [下载 SwitchTVBox(1).nro](https://github.com/zqzhuhai-commits/tvbox-switch/releases/download/SwitchTVBox/SwitchTVBox%281%29.nro)
+- [附件说明与 SHA-256](docs/SwitchTVBox-attachments.md)
