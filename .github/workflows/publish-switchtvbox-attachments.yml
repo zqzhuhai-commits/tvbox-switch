@@ -33,7 +33,7 @@ jobs:
             cat docs/SwitchTVBox-attachments.md >> /tmp/switchtvbox-release-notes.md
           fi
           gh api --method PATCH repos/"$GH_REPO"/releases/assets/642492269 -f name=SwitchTVBox.nsp > /dev/null
-          old_nro_id=$(gh release view SwitchTVBox --json assets --jq '.assets[] | select(.name == "SwitchTVBox.1.nro") | .id')
+          old_nro_id=$(gh api repos/"$GH_REPO"/releases/413380053/assets --jq '.[] | select(.name == "SwitchTVBox.1.nro") | .id')
           if [ -n "$old_nro_id" ]; then
             gh api --method PATCH repos/"$GH_REPO"/releases/assets/"$old_nro_id" -f name=SwitchTVBox.nro > /dev/null
           fi
