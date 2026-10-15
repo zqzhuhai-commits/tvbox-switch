@@ -1,0 +1,34 @@
+name: Publish user-made NSP
+on:
+  push:
+    branches: [main]
+    paths:
+      - "packages/SwitchTVBox-05243035FF755000-v0.nsp"
+      - "docs/user-nsp-v0-release.md"
+      - ".github/workflows/publish-user-nsp.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-user-nsp-v0
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify supplied NSP
+        run: |
+          echo "ab62328d107f1b2fd1d9a05370199fb4199721946de2429aef12ca7a911310ef  packages/SwitchTVBox-05243035FF755000-v0.nsp" | sha256sum --check
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          tag="user-nsp-v0-05243035FF755000"
+          file="packages/SwitchTVBox-05243035FF755000-v0.nsp"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release upload "$tag" "$file" --clobber
+          else
+            gh release create "$tag" "$file" --target "$GITHUB_SHA" --title "SwitchTVBox 自制 NSP v0" --notes-file docs/user-nsp-v0-release.md
+          fi

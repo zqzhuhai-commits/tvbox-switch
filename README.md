@@ -58,4 +58,14 @@ Release 仅提供 NRO 文件，不包含账号文件、模板或默认配置。�
 
 同步自 [zender555/SwitchTVBox](https://github.com/zender555/SwitchTVBox)，上游提交 `73f45d8`。保留原项目署名与功能说明，移除群宣传段落及图片。本仓库不是原作者的官方发布仓库。
 
-上游当前仅包含 `README.md`、`icon.jpg` 与群宣传图片，没有 HTML、CSS、JavaScript 或客户端源码。因此本次未包含前端源码；本次附件 NSP 是二进制安装包，未上传至本仓库。
+上游当前仅包含 `README.md`、`icon.jpg` 与群宣传图片，没有 HTML、CSS、JavaScript 或客户端源码。因此本次未包含前端源码；用户自行制作的 NSP 二进制安装包已另行上传，见下方下载链接。
+
+## 用户自制 NSP 下载
+
+[Releases 下载页](https://github.com/zqzhuhai-commits/tvbox-switch/releases/tag/user-nsp-v0-05243035FF755000) · [直接下载 NSP](https://github.com/zqzhuhai-commits/tvbox-switch/releases/download/user-nsp-v0-05243035FF755000/SwitchTVBox-05243035FF755000-v0.nsp)
+
+此 NSP 由仓库所有者自行制作并授权公开上传，文件按原样保存。它不是上游作者的官方 NSP 发布，未经过本次真机安装或启动测试。
+
+- 文件大小：264,408 字节
+- Title ID（来自文件名）：`05243035FF755000`
+- SHA-256：`ab62328d107f1b2fd1d9a05370199fb4199721946de2429aef12ca7a911310ef`
