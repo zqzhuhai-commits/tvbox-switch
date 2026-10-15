@@ -16,5 +16,5 @@ with zipfile.ZipFile(OUT / "SwitchTvbox.zip") as z:
     nro = z.read("switch/SwitchTVBox/SwitchTVBox.nro")
 assert len(nro) == 38430485, "NRO size mismatch"
 assert hashlib.sha256(nro).hexdigest() == "d00d3d336d8b89d82f45e49385fe4538378450e1651234c8dac0436eb10e8f2b", "NRO checksum mismatch"
-(OUT / "SwitchTVBox(1).nro").write_bytes(nro)
+(OUT / "SwitchTVBox.nro").write_bytes(nro)
 print("Both original attachments restored and SHA-256 verified.")

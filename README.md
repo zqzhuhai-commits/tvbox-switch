@@ -57,5 +57,7 @@ Release 仅提供 NRO 文件，不包含账号文件、模板或默认配置。�
 [SwitchTVBox 正式版发布页](https://github.com/zqzhuhai-commits/tvbox-switch/releases/tag/SwitchTVBox)
 
 - [下载 SwitchTvbox.zip](https://github.com/zqzhuhai-commits/tvbox-switch/releases/download/SwitchTVBox/SwitchTvbox.zip)
-- [下载 SwitchTVBox(1).nro](https://github.com/zqzhuhai-commits/tvbox-switch/releases/download/SwitchTVBox/SwitchTVBox.1.nro)
+- [下载 SwitchTVBox.nro](https://github.com/zqzhuhai-commits/tvbox-switch/releases/download/SwitchTVBox/SwitchTVBox.nro)
 - [附件说明与 SHA-256](docs/SwitchTVBox-attachments.md)
+
+- [下载 SwitchTVBox.nsp](https://github.com/zqzhuhai-commits/tvbox-switch/releases/download/SwitchTVBox/SwitchTVBox.nsp)

@@ -32,5 +32,11 @@ jobs:
             printf '\n\n' >> /tmp/switchtvbox-release-notes.md
             cat docs/SwitchTVBox-attachments.md >> /tmp/switchtvbox-release-notes.md
           fi
-          gh release upload SwitchTVBox dist/SwitchTvbox.zip 'dist/SwitchTVBox(1).nro' --clobber
+          gh api --method PATCH repos/"$GH_REPO"/releases/assets/642492269 -f name=SwitchTVBox.nsp > /dev/null
+          old_nro_id=$(gh release view SwitchTVBox --json assets --jq '.assets[] | select(.name == "SwitchTVBox.1.nro") | .id')
+          if [ -n "$old_nro_id" ]; then
+            gh api --method PATCH repos/"$GH_REPO"/releases/assets/"$old_nro_id" -f name=SwitchTVBox.nro > /dev/null
+          fi
+          python3 -c 'from pathlib import Path; p=Path("/tmp/switchtvbox-release-notes.md"); s=p.read_text(); s=s.replace("SwitchTVBox-05243035FF755000-v0.nsp","SwitchTVBox.nsp").replace("SwitchTVBox(1).nro","SwitchTVBox.nro").replace("SwitchTVBox.1.nro","SwitchTVBox.nro"); p.write_text(s)'
+          gh release upload SwitchTVBox dist/SwitchTvbox.zip 'dist/SwitchTVBox.nro' --clobber
           gh release edit SwitchTVBox --draft=false --prerelease=false --latest --notes-file /tmp/switchtvbox-release-notes.md
